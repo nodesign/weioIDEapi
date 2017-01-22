@@ -2,14 +2,15 @@
 The WeIO IDE API allows developers to connect their platform to WeIO IDE Frontend editor. It uses (JSON-RPC)[http://json-rpc.org] to communicate between server (pc or some specific electronics like rPI, WeIO, Micropython,...) and WeIO Frontend code editor. In that way editing and running files in network becomes semsless.  
 
 ##getInfo
+Information about connected electronic board. When server requests getInfo, client will respond with json configuration file that is in the root path of the board
 
 request | args example | description
 ------- | ------------ | -----------
 getInfo | "" | Get information about electronics 
 
 ####Board responds with json structure
-name | description | example
----- | ----------- | -------
+key | description | example(s)
+---- | ----------- | ---------
 name | Name of computer | name: "WeIO 2.0" (rPI, ESP8266,...)
 processor | CPU name | processor: "ESP8266" (AR9331, BCM2837,...)
 platform | Software platform running on electronics | platform:"micropython" (linux, nuttix, rtos, bare metal,...)
@@ -24,6 +25,7 @@ network.wireless | Wireless type if available | wireless: "wifi" (null if not a
 network.rssi | Strengts of wireless network if available 1-5 | rssi: 5 (null if not available)
 
 ##getFileTree
+File tree structure with all names of files and directories. This request don't need path as argument because it will refer directly to it's internal json configuration key rootDirectory
 
 request | args example | description
 ------- | ------------ | -----------
