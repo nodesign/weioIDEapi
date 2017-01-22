@@ -33,7 +33,7 @@ getFileTree | "" | Get file tree of project. Path is known by board. See getInfo
 
 ####Board responds
 
-```json
+```
 [
 {type: "file", label: "main.py", language: "python"},
 {type: "file", label: "projectConfig.toml", language: "toml"},
@@ -41,7 +41,7 @@ getFileTree | "" | Get file tree of project. Path is known by board. See getInfo
 ]
 ```
 
-name | description | example(s)
+key | description | example(s)
 ---- | ----------- | ----------
 type | Describes if it's a file or directory | type: "file"
 label | File/directory name | label: "main.py"
