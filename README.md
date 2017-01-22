@@ -7,21 +7,21 @@ request | args example | description
 ------- | ------------ | -----------
 getInfo | "" | Get information about electronics 
 
-####Board responds
-name | description | example(s)
----- | ----------- | ----------
-name | Name of computer | WeIO, rPI, ESP8266,...
-processor | CPU name | ESP8266, AR9331, BCM2837
-platform | Software platform running on electronics | micropython, linux, nuttix, rtos, bare metal,...
+####Board responds with json structure
+name | description | example
+---- | ----------- | -------
+name | Name of computer | name: "WeIO 2.0" (rPI, ESP8266,...)
+processor | CPU name | processor: "ESP8266" (AR9331, BCM2837,...)
+platform | Software platform running on electronics | platform:"micropython" (linux, nuttix, rtos, bare metal,...)
 security | Security protocols supported by platform | to be defined
-electrolink | Electrolink version | v1.0, not supported
-rootDirectory | Path to the main runnable program | /root
-storage | Storage 
+electrolink | Electrolink version | electrolink:"v1.0"
+rootDirectory | Path to the main runnable program | rootDirectory:"/root"
+storage | Available storage on the board in Mb | storage: {free: "0.8Mb", total:"2.0Mb"}
 network.server | Address of Minflux server to connect to | to be defined
 network.worldIp | Mainflux ip address that will represent your board | to be defined
-network.lanIp | Ip address in LAN | 10.0.0.10
-network.wireless | Wireless type if available | wifi, not available
-network.rssi | Strengts of wireless network if available 1-5 | 5, not available
+network.lanIp | Ip address in LAN | lanIp: "10.0.0.10"
+network.wireless | Wireless type if available | wireless: "wifi" (null if not available)
+network.rssi | Strengts of wireless network if available 1-5 | rssi: 5 (null if not available)
 
 ##getFileTree
 
